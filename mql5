@@ -1,0 +1,77 @@
+
+//+------------------------------------------------------------------+
+//|                                                     DYJ AtrTrendReversal |
+//|                                          Expert Advisor for MetaTrader 5 |
+//|                                                        forexroboteasy.com |
+//|                                                     Forex Robot Easy Team |
+//+------------------------------------------------------------------+
+#property copyright 'forexroboteasy.com'
+#property link      'forexroboteasy.com'
+#property version   '1.00'
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+   // Add initialization code here
+
+   return(INIT_SUCCEEDED);
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+   // Add deinitialization code here
+}
+
+//+------------------------------------------------------------------+
+//| Expert start function                                            |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Calculate and display the ATR trend line
+
+   double atr = iATR(NULL, 0, 14, 0); // Calculate the ATR indicator with a period of 14
+   double atrHigh = NormalizeDouble(atr, Digits); // Round the ATR value to the number of decimal places of the symbol
+   double atrLow = atrHigh / 2; // Set the low value of the ATR trend line to half of the high value
+
+   Comment('ATR High: ', atrHigh, ', ATR Low: ', atrLow); // Display the ATR trend line values
+
+   // Check for trend reversals and make trading decisions based on the ATR trend line
+
+   if(atrHigh > 1.5 * atrLow)
+   {
+      // High ATR value indicates a potential trend change, take appropriate action
+   }
+   else
+   {
+      // ATR trend line indicates no significant change, continue with current trend
+   }
+}
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Add tick processing code here
+}
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Add tick processing code here
+}
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+   // Add tick processing code here
+}
